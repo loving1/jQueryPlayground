@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Rose's jQuery Play Ground! | Embedded jQuery</title>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="container">
+
+<h1>Hide what you click on </h1>
+	<p> <a href="#">Click to hide me </a> (but not me). </p> <div id="four" style="display:none; width:100px; height: 100px; background-color: #3C9;"> One</div>
+    <script> 
+    	$('a').click(function() { 
+			$(this).hide(); 
+			}); 
+    	
+
+    </script>
+
+    <p> Bring it back!<p>
+    	<script>
+			$('a.fadeIn').click(function() {
+			$('div:hidden:first').fadeIn('slow'); 
+			}); 
+    	</script> 
+    
+<h1>Fade in and out based on hover</h1>
+<p>Hover over image to fade it in. Move your mouse and it fades out. </p>
+	<img class="fadeIn" src="images/img1.jpg"/>
+	<img class="fadeIn" src="images/img2.jpg"/>
+	<img class="fadeIn" src="images/img5.jpg"/>
+
+<script> 
+	$('img.fadeIn').css({'opacity': 0.4});  
+	$('img.fadeIn').hover(function() {
+			$(this).stop().animate({'opacity': 1});
+		}, function(){ 
+			$(this).stop().animate({'opacity': .4}); 
+		
+		}); 
+</script>
+
+<h1>Different .fade() methods</h1>
+
+<p class="fadeTo">Click this paragraph to see it fade to a certain opacity</p>
+<script>
+	$('p.fadeTo').click(function(){
+		$(this).fadeTo('slow', .33); 
+		});
+	$('p.fadeTo').click(function(){
+		$(this).fadeTo('slow', 1); 
+		});
+</script>
+
+<p class="fadeAway"> If you click on this paragraph, you'll see it just fade away.</p>
+<script> 
+	$('p.fadeAway').click(function(){
+		$(this).fadeOut(3000); 
+		}); 
+</script>
+
+
+<p class="fadeAway2"> If you watch on this paragraph, you'll see it just fade away.</p>
+<script> 
+	$('p.fadeAway2').fadeOut(3000); 
+</script>
+
+<p class="fadeIn"> Click here to fade stuff in. </p>
+<div id="one" style="display:none; width:100px; height: 100px; background-color: #3C9;"> One</div>
+<div id="two" style="display:none; width:100px; height: 100px; background-color: #9C3;"> Two</div>
+<div id="three" style="display:none; width:100px; height: 100px; background-color: #C39;"> Three</div>
+
+<script> 
+	$('p.fadeIn').click(function() {
+		$('div:hidden:first').fadeIn('slow'); 
+		}); 
+</script>
+
+
+<h1>Move things and call it a day! </h1>
+<p class="moveMe" style="background-color:#98BF21; height: 30px; width:80px; position:absolute; right: 0;">Whee!!</p>
+<p class="mover">Click me to move the thing.</p>
+<script>
+	$('.mover').click(function(){
+		$('.moveMe').animate({
+			right: '650px', 
+			bottom: '200px',
+			opacity:'.5',
+			height: '150px',
+			width: '150px' 
+		
+		});
+	});
+</script>
+
+<button> come back </button>
+
+<h1> Sliding </h1>
+<p class="slideToggle">Click here to toggle and eat.</p>
+
+<!--<p> 	&nbsp; 	&nbsp;&nbsp; "   0 0   "</p>-->
+
+
+
+
+<div style="position: relative;"> 
+
+<div id="leaf" style=" width:100px; height: 100px; background-color: #3C9; 	border-radius: 25px 0 25px 0;  z-index:10; position: absolute;"> 	 
+
+
+
+
+ </div>
+
+
+
+<div id="caterpillar" style="z-index:10; position: absolute; top: 60px; "> 
+	<p class="slideMe">Eat me!</p>
+    
+    	<div id="munch" style=" width:70px; height: 70px; background-color: #EFEFEF; border-radius: 100px ; margin-left:15px;   ">
+    
+</div>
+	<div id="one" style=" width:100px; height: 100px; background-color: #3C9; margin-top:-55px;	border-radius: 100px 100px 0 0;"> 	 	&nbsp; &nbsp; 	&nbsp;&nbsp; "   0 0   "</div>
+	<div id="two" style="width:100px; height: 100px; background-color: #9C3;">  </div>
+	<div id="three" style="width:100px; height: 100px; background-color: #C39; border-radius: 0 0 25px 25px;">  					</div>
+</div>
+
+</div>
+
+<script>
+	$('.slideToggle').click(function(){
+		$('p.slideMe').slideToggle();
+		}); 
+</script>
+
+
+
+
+</div><!-- end #container -->
+</body>
+</html>
